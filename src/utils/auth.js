@@ -10,8 +10,7 @@ const setUserData = () => {
 
 export const isLoggedIn = () => {
 	if ( localStorage.getItem('token') && localStorage.getItem('user') ) {
-    let token = localStorage.getItem('token');//.substr(4);
-    console.log(jwtDecode(token))
+    let token = localStorage.getItem('token');
 		if (jwtDecode(token).exp < Date.now() / 1000) {
 			localStorage.clear();
 			return false;

@@ -23,7 +23,7 @@ const composeSetup =
 
 export const store = createStore(
     rootReducer,
-    composeSetup(applyMiddleware(sagaMiddleware, logger)) // allows redux devtools to watch sagas
+    composeSetup(applyMiddleware(sagaMiddleware, logger))
 );
 
 sagaMiddleware.run(rootSaga);

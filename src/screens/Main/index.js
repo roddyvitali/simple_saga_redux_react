@@ -19,7 +19,7 @@ class Main extends Component {
     return (
       <div>
           <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">Login Selit</NavbarBrand>
+            <NavbarBrand href="/">Login Demo para Selit</NavbarBrand>
             <NavbarToggler onClick={ () => this.setState({ isOpen: !isOpen }) } />
             <Collapse isOpen={isOpen} navbar>
               <Nav className="ml-auto" navbar>
@@ -31,9 +31,9 @@ class Main extends Component {
           </Navbar>
         <Jumbotron>
           <h1 className="display-3">Bienvenido, { username }!</h1>
-          <p className="lead">Este es un ejemplo de un login elaborado por Roddy Vitali.</p>
+          <p className="lead">Esta es un app demo de un login, con sesión y experación elaborado por Roddy Vitali.</p>
           <hr className="my-2" />
-          <p>Las tecnologias y librerias ocupadas son: React, Redux, Saga, Router DOM, Sass, Bootsrap, Reactstrap, .</p>
+          <p>Las tecnologias y librerias ocupadas son: React, Redux, Saga, React Router, Axios, Actions, Logger, Reactstrap, JWT, Toastify, Sass.</p>
           <p className="lead">
           </p>
         </Jumbotron>
@@ -44,7 +44,7 @@ class Main extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.general
+    ...state.general
   };
 };
 const mapDispatchToProps = {

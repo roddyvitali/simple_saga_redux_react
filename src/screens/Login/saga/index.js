@@ -1,6 +1,6 @@
 import { takeLatest, call, fork, put } from 'redux-saga/effects';
 import { LOGIN_REQUESTING, LOGIN_SUCCESS, LOGIN_UNSUCCESS, LOGIN_ERROR } from './../reducer';
-import { SET_USER_INFO } from './../../Main/reducer';
+// import { SET_USER_INFO } from './../../Main/reducer';
 import { history } from '../../../history';
 import axios from 'axios';
 
@@ -25,7 +25,7 @@ function* requestLogin() {
       localStorage.setItem('user', JSON.stringify(resp.data.user));
       yield delay(1000);
       yield put({ type: LOGIN_SUCCESS });
-      yield put({ type: SET_USER_INFO, payload: resp.data.user });
+      // yield put({ type: SET_USER_INFO, payload: resp.data.user });
       history.push('/');
     }else{
       yield put({ type: LOGIN_UNSUCCESS, payload: {} });
